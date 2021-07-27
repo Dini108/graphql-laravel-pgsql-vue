@@ -1,0 +1,21 @@
+class_name: AcceptanceTester
+
+modules:
+    enabled:
+        - WebDriver
+        - Asserts
+    config:
+        WebDriver:
+            browser: 'chrome'
+            url: 'http://web/'
+            host: 'selenium'
+            port: '4444'
+env:
+    chrome:
+        modules:
+            config:
+                WebDriver:
+                    url: 'http://web'
+                    host: 'selenium'
+                    browser: 'chrome'
+                    port: '4444'

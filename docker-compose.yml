@@ -1,0 +1,36 @@
+version: '3.4'
+
+services:
+  web:
+    container_name: laravel
+    image: laravelapp
+    build:
+      context: .docker
+      dockerfile: Dockerfile
+    ports:
+      - 80:80
+    volumes:
+      - ./src:/var/www
+
+  pgsql:
+    container_name: postgresql
+    image: postgres
+    restart: always
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_DB: example
+      POSTGRES_USER: example
+      POSTGRES_PASSWORD: example
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  selenium:
+    image: selenium/standalone-chrome:3.12.0
+    ports:
+      - 4444:4444
+    volumes:
+      - /dev/shm:/dev/shm
+    shm_size: '2gb'
+volumes:
+  pgdata:
