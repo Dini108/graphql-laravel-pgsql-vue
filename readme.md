@@ -1,4 +1,4 @@
-## GraphQL Laravel Vue Postgresql Docker Codeception
+## GraphQL Laravel Vue Postgresql Docker Codeception Example project 
 
 ### Description
 ### How to run this project
